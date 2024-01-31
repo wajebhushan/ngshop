@@ -1,0 +1,29 @@
+{
+  "name": "ngshop-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/ngshop-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/ngshop-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "ngshop:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "ngshop:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "ngshop:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["ngshop"]
+}
