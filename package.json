@@ -2,7 +2,10 @@
   "name": "@ngshop/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "nx":"nx",
+    "start": "ng serve"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~17.1.0",
